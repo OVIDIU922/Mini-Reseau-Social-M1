@@ -1,0 +1,62 @@
+/* Réinitialisation et box-sizing */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif; /* Police du corps */
+    background-color: #e0e0e0; /* Couleur de fond */
+    color: #333; /* Couleur du texte */
+}
+
+header {
+    background: #f0f0f0; /* Couleur de fond de l'en-tête */
+    padding: 20px;
+    text-align: center;
+    border-radius: 20px; /* Coins arrondis */
+    box-shadow: 8px 8px 15px rgba(180, 180, 180, 0.4), /* Ombre */
+                -8px -8px 15px rgba(255, 255, 255, 0.8);
+}
+
+nav a {
+    margin: 0 10px; /* Marges entre les liens */
+    padding: 10px 20px; /* Espacement intérieur des liens */
+    text-decoration: none; /* Pas de soulignement */
+    background: #f0f0f0; /* Couleur de fond des liens */
+    border-radius: 10px; /* Coins arrondis */
+    transition: box-shadow 0.3s; /* Animation de l'ombre */
+}
+
+nav a:hover {
+    box-shadow: 2px 2px 10px rgba(180, 180, 180, 0.4), /* Ombre au survol */
+                -2px -2px 10px rgba(255, 255, 255, 0.8);
+}
+
+.section {
+    padding: 20px; /* Espacement intérieur des sections */
+    background: #f0f0f0; /* Couleur de fond des sections */
+    border-radius: 20px; /* Coins arrondis */
+    box-shadow: 8px 8px 15px rgba(180, 180, 180, 0.4), /* Ombre */
+                -8px -8px 15px rgba(255, 255, 255, 0.8);
+    margin: 20px 0; /* Marge entre les sections */
+}
+
+.post {
+    background: #e0e0e0; /* Couleur de fond des posts */
+    border-radius: 10px; /* Coins arrondis */
+    padding: 15px; /* Espacement intérieur des posts */
+    margin-bottom: 10px; /* Marge en bas des posts */
+    box-shadow: 5px 5px 10px rgba(180, 180, 180, 0.4), /* Ombre des posts */
+                -5px -5px 10px rgba(255, 255, 255, 0.9);
+}
+
+.friend {
+    background: #e0e0e0; /* Couleur de fond des amis */
+    padding: 10px; /* Espacement intérieur des amis */
+    border-radius: 10px; /* Coins arrondis */
+    margin: 5px 0; /* Marge entre les amis */
+    display: flex; /* Flexbox pour aligner le contenu */
+    justify-content: space-between; /* Espacement entre les éléments */
+}

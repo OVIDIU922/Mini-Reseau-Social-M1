@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "content": "Bonjour tout le monde!",
+        "image": "",
+        "likes": 0,
+        "dislikes": 0,
+        "loves": 0
+    },
+    {
+        "id": 2,
+        "content": "Je viens de publier une nouvelle photo!",
+        "image": "path/to/image.jpg",
+        "likes": 0,
+        "dislikes": 0,
+        "loves": 0
+    }
+]
