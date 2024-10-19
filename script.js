@@ -19,6 +19,7 @@ function displayPosts() {
         const postElement = document.createElement("div");
         postElement.className = "post"; // Ajouter la classe post
         postElement.innerHTML = `
+            <h4>${post.author}</h4> <!-- Afficher le nom de l'auteur -->
             <p>${post.content}</p>
             ${post.image ? `<img src="images/fleur-simple.avif" alt="Image post" />` : ''} <!-- Afficher l'image si elle existe -->
             <div>
@@ -30,6 +31,7 @@ function displayPosts() {
         feedContainer.appendChild(postElement); // Ajouter le post au conteneur
     });
 }
+
 
 // Fonction pour réagir à un post
 function reactToPost(postId, reactionType) {

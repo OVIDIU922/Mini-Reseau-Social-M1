@@ -9,7 +9,6 @@ body {
     font-family: Arial, sans-serif; /* Police du corps */
     background-color: #e0e0e0; /* Couleur de fond */
     color: #333; /* Couleur du texte */
-    padding: 20px; /* Espacement pour éviter que le contenu touche les bords */
 }
 
 header {
@@ -21,12 +20,10 @@ header {
                 -8px -8px 15px rgba(255, 255, 255, 0.8);
 }
 
-/* Style du titre dans le header */
 header h1 {
-    margin-bottom: 20px; /* Espacement sous le titre */
+    margin-bottom: 20px; /* Ajoute un espacement sous le titre */
 }
 
-/* Liens dans la barre de navigation */
 nav a {
     margin: 0 10px; /* Marges entre les liens */
     padding: 10px 20px; /* Espacement intérieur des liens */
@@ -36,13 +33,11 @@ nav a {
     transition: box-shadow 0.3s; /* Animation de l'ombre */
 }
 
-/* Animation des liens au survol */
 nav a:hover {
     box-shadow: 2px 2px 10px rgba(180, 180, 180, 0.4), /* Ombre au survol */
                 -2px -2px 10px rgba(255, 255, 255, 0.8);
 }
 
-/* Styles des sections principales */
 .section {
     padding: 20px; /* Espacement intérieur des sections */
     background: #f0f0f0; /* Couleur de fond des sections */
@@ -52,7 +47,6 @@ nav a:hover {
     margin: 20px 0; /* Marge entre les sections */
 }
 
-/* Styles des posts */
 .post {
     background: #e0e0e0; /* Couleur de fond des posts */
     border-radius: 10px; /* Coins arrondis */
@@ -62,16 +56,6 @@ nav a:hover {
                 -5px -5px 10px rgba(255, 255, 255, 0.9);
 }
 
-/* Style général des images dans les posts */
-.post img {
-    max-width: 100%; /* L'image ne dépassera jamais 100% de la largeur du conteneur */
-    height: auto;    /* Conserve le ratio de l'image */
-    border-radius: 10px; /* Coins arrondis pour un meilleur style */
-    display: block;  /* Pour éviter tout espace supplémentaire autour de l'image */
-    margin: 10px 0;  /* Ajouter une marge au-dessus et en-dessous */
-}
-
-/* Styles des amis */
 .friend {
     background: #e0e0e0; /* Couleur de fond des amis */
     padding: 10px; /* Espacement intérieur des amis */
@@ -81,7 +65,6 @@ nav a:hover {
     justify-content: space-between; /* Espacement entre les éléments */
 }
 
-
 /* footer*/
 footer {
     text-align: center;
@@ -90,60 +73,3 @@ footer {
     box-shadow: 7px 7px 15px #b0b0b0, -7px -7px 15px #ffffff;
     position: relative; /* Permet de le placer en bas de la page si nécessaire */
 }
-
-/* MEDIA QUERIES */
-/* Mobile (petits écrans) */
-@media (max-width: 600px) {
-    header {
-        padding: 15px;
-    }
-    header h1 {
-        font-size: 24px; /* Réduire la taille du texte sur mobile */
-    }
-    nav a {
-        padding: 8px 15px; /* Réduire les marges et padding sur les liens */
-        font-size: 14px;
-    }
-    .section {
-        padding: 15px; /* Réduire les paddings des sections */
-        margin: 10px 0;
-    }
-    .post {
-        padding: 10px; /* Réduire les paddings des posts */
-    }
-    .friend {
-        flex-direction: column; /* Les amis seront affichés en colonne */
-        text-align: center; /* Centrer le texte */
-    }
-}
-
-/* Tablette (écrans moyens) */
-@media (min-width: 601px) and (max-width: 1024px) {
-    header h1 {
-        font-size: 28px; /* Taille du titre pour les tablettes */
-    }
-    nav a {
-        padding: 10px 18px; /* Ajuster les paddings sur tablette */
-        font-size: 16px;
-    }
-    .friend {
-        flex-direction: row; /* Les amis seront affichés en ligne */
-    }
-}
-
-/* Bureau (grands écrans) */
-@media (min-width: 1025px) {
-    header h1 {
-        font-size: 32px; /* Taille du titre pour les grands écrans */
-    }
-    nav a {
-        font-size: 18px;
-    }
-    .section {
-        padding: 25px; /* Plus de padding pour les sections */
-    }
-    .post {
-        padding: 20px; /* Plus de padding pour les posts */
-    }
-}
-

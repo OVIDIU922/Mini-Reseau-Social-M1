@@ -1,6 +1,7 @@
 [
     {
         "id": 1,
+        "author": "Jean Dupont",
         "content": "Bonjour tout le monde!",
         "image": "",
         "likes": 0,
@@ -9,6 +10,7 @@
     },
     {
         "id": 2,
+        "author": "Marie Dubois",
         "content": "Je viens de publier une nouvelle photo!",
         "image": "path/to/image.jpg",
         "likes": 0,
@@ -16,3 +18,4 @@
         "loves": 0
     }
 ]
+
