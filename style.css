@@ -20,6 +20,10 @@ header {
                 -8px -8px 15px rgba(255, 255, 255, 0.8);
 }
 
+header h1 {
+    margin-bottom: 20px; /* Ajoute un espacement sous le titre */
+}
+
 nav a {
     margin: 0 10px; /* Marges entre les liens */
     padding: 10px 20px; /* Espacement intérieur des liens */
@@ -59,4 +63,14 @@ nav a:hover {
     margin: 5px 0; /* Marge entre les amis */
     display: flex; /* Flexbox pour aligner le contenu */
     justify-content: space-between; /* Espacement entre les éléments */
+}
+
+/* footer*/
+  
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+    box-shadow: 7px 7px 15px #b0b0b0, -7px -7px 15px #ffffff;
+    position: relative; /* Permet de le placer en bas de la page si nécessaire */
 }
