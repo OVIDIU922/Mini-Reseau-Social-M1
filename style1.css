@@ -9,7 +9,6 @@ body {
     font-family: Arial, sans-serif; /* Police du corps */
     background-color: #e0e0e0; /* Couleur de fond */
     color: #333; /* Couleur du texte */
-    padding: 20px; /* Espacement pour éviter que le contenu touche les bords */
 }
 
 header {
@@ -21,12 +20,13 @@ header {
                 -8px -8px 15px rgba(255, 255, 255, 0.8);
 }
 
+
 /* Style du titre dans le header */
 header h1 {
     margin-bottom: 20px; /* Espacement sous le titre */
 }
 
-/* Liens dans la barre de navigation */
+
 nav a {
     margin: 0 10px; /* Marges entre les liens */
     padding: 10px 20px; /* Espacement intérieur des liens */
@@ -36,13 +36,11 @@ nav a {
     transition: box-shadow 0.3s; /* Animation de l'ombre */
 }
 
-/* Animation des liens au survol */
 nav a:hover {
     box-shadow: 2px 2px 10px rgba(180, 180, 180, 0.4), /* Ombre au survol */
                 -2px -2px 10px rgba(255, 255, 255, 0.8);
 }
 
-/* Styles des sections principales */
 .section {
     padding: 20px; /* Espacement intérieur des sections */
     background: #f0f0f0; /* Couleur de fond des sections */
@@ -52,7 +50,6 @@ nav a:hover {
     margin: 20px 0; /* Marge entre les sections */
 }
 
-/* Styles des posts */
 .post {
     background: #e0e0e0; /* Couleur de fond des posts */
     border-radius: 10px; /* Coins arrondis */
@@ -62,23 +59,110 @@ nav a:hover {
                 -5px -5px 10px rgba(255, 255, 255, 0.9);
 }
 
-/* Style général des images dans les posts */
 .post img {
-    max-width: 100%; /* L'image ne dépassera jamais 100% de la largeur du conteneur */
-    height: auto;    /* Conserve le ratio de l'image */
-    border-radius: 10px; /* Coins arrondis pour un meilleur style */
-    display: block;  /* Pour éviter tout espace supplémentaire autour de l'image */
-    margin: 10px 0;  /* Ajouter une marge au-dessus et en-dessous */
+    max-width: 100%; /* Limiter la taille de l'image */
+    height: auto; /* Ajuster la hauteur automatiquement */
+    border-radius: 10px; /* Coins arrondis pour l'image */
+    cursor: pointer; /* Changer le curseur au survol */
 }
 
-/* Styles des amis */
-.friend {
-    background: #e0e0e0; /* Couleur de fond des amis */
-    padding: 10px; /* Espacement intérieur des amis */
-    border-radius: 10px; /* Coins arrondis */
-    margin: 5px 0; /* Marge entre les amis */
-    display: flex; /* Flexbox pour aligner le contenu */
-    justify-content: space-between; /* Espacement entre les éléments */
+.post div button {
+    background-color: #e0e0e0;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin-right: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+
+.post div button:hover {
+    background-color: #d0d0d0;
+}
+
+.post div i {
+    margin-right: 5px;
+}
+
+/* Style pour les icônes de réaction */
+.fas {
+    font-size: 18px;
+    color: #333;
+}
+
+.fa-heart {
+    color: red;
+}
+
+.fa-thumbs-up, .fa-thumbs-down {
+    color: #007bff;
+}
+
+/* Section des commentaires */
+.comment-section {
+    margin-top: 10px; /* Marge au-dessus de la section des commentaires */
+}
+
+.comment-section input {
+    width: 30%; /* Largeur du champ de saisie */
+    padding: 5px; /* Espacement intérieur */
+    border-radius: 5px; /* Coins arrondis */
+    border: 1px solid #ccc; /* Bordure */
+}
+
+.comment-section button {
+    padding: 5px 10px; /* Espacement intérieur du bouton */
+    border-radius: 5px; /* Coins arrondis */
+    border: none; /* Pas de bordure */
+    background-color: #007bff; /* Couleur de fond */
+    color: white; /* Couleur du texte */
+    cursor: pointer; /* Changer le curseur au survol */
+}
+
+.comment-section button:hover {
+    background-color: #0056b3; /* Couleur au survol */
+}
+
+/* Commentaire individuel */
+.comment {
+    margin-top: 5px; /* Marge au-dessus des commentaires */
+    padding: 5px;
+    background-color: #f9f9f9; /* Couleur de fond des commentaires */
+    border-radius: 5px; /* Coins arrondis */
+    border: 1px solid #ccc; /* Bordure */
+}
+
+/* Modale pour l'image */
+.modal {
+    display: none; /* Masqué par défaut */
+    position: fixed; /* Rester en place */
+    z-index: 1; /* Au-dessus des autres éléments */
+    left: 0;
+    top: 0;
+    width: 100%; /* Prendre toute la largeur */
+    height: 100%; /* Prendre toute la hauteur */
+    overflow: auto; /* Activer le défilement si nécessaire */
+    background-color: rgb(0,0,0); /* Couleur de fond noir */
+    background-color: rgba(0,0,0,0.9); /* Fond noir transparent */
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 80%; /* Limiter la largeur de l'image */
+    max-height: 80%; /* Limiter la hauteur de l'image */
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff; /* Couleur du bouton de fermeture */
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer; /* Changer le curseur au survol */
 }
 
 
@@ -111,10 +195,6 @@ footer {
     .post {
         padding: 10px; /* Réduire les paddings des posts */
     }
-    .friend {
-        flex-direction: column; /* Les amis seront affichés en colonne */
-        text-align: center; /* Centrer le texte */
-    }
 }
 
 /* Tablette (écrans moyens) */
@@ -125,9 +205,6 @@ footer {
     nav a {
         padding: 10px 18px; /* Ajuster les paddings sur tablette */
         font-size: 16px;
-    }
-    .friend {
-        flex-direction: row; /* Les amis seront affichés en ligne */
     }
 }
 
@@ -146,3 +223,5 @@ footer {
         padding: 20px; /* Plus de padding pour les posts */
     }
 }
+
+

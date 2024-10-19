@@ -20,12 +20,10 @@ header {
                 -8px -8px 15px rgba(255, 255, 255, 0.8);
 }
 
-
 /* Style du titre dans le header */
 header h1 {
     margin-bottom: 20px; /* Espacement sous le titre */
 }
-
 
 nav a {
     margin: 0 10px; /* Marges entre les liens */
@@ -51,7 +49,7 @@ nav a:hover {
 }
 
 .post {
-    background: #e0e0e0; /* Couleur de fond des posts */
+    background: #fff; /* Couleur de fond des posts */
     border-radius: 10px; /* Coins arrondis */
     padding: 15px; /* Espacement intérieur des posts */
     margin-bottom: 10px; /* Marge en bas des posts */
@@ -67,36 +65,36 @@ nav a:hover {
 }
 
 .post div button {
-    background-color: #e0e0e0;
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    margin-right: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
+    background-color: #e0e0e0; /* Couleur de fond des boutons */
+    border: none; /* Pas de bordure */
+    border-radius: 5px; /* Coins arrondis */
+    padding: 10px; /* Espacement intérieur */
+    margin-right: 5px; /* Espacement entre les boutons */
+    cursor: pointer; /* Curseur en forme de main */
+    font-size: 16px; /* Taille de police */
+    transition: background-color 0.3s; /* Animation de la couleur de fond */
 }
 
 .post div button:hover {
-    background-color: #d0d0d0;
+    background-color: #d0d0d0; /* Couleur au survol */
 }
 
 .post div i {
-    margin-right: 5px;
+    margin-right: 5px; /* Espacement entre l'icône et le texte */
 }
 
 /* Style pour les icônes de réaction */
 .fas {
-    font-size: 18px;
-    color: #333;
+    font-size: 18px; /* Taille des icônes */
+    color: #333; /* Couleur des icônes par défaut */
 }
 
 .fa-heart {
-    color: red;
+    color: red; /* Couleur pour l'icône cœur */
 }
 
 .fa-thumbs-up, .fa-thumbs-down {
-    color: #007bff;
+    color: #007bff; /* Couleur pour les icônes pouce */
 }
 
 /* Section des commentaires */
@@ -105,7 +103,7 @@ nav a:hover {
 }
 
 .comment-section input {
-    width: 30%; /* Largeur du champ de saisie */
+    width: 70%; /* Largeur du champ de saisie */
     padding: 5px; /* Espacement intérieur */
     border-radius: 5px; /* Coins arrondis */
     border: 1px solid #ccc; /* Bordure */
@@ -127,7 +125,7 @@ nav a:hover {
 /* Commentaire individuel */
 .comment {
     margin-top: 5px; /* Marge au-dessus des commentaires */
-    padding: 5px;
+    padding: 5px; /* Espacement intérieur */
     background-color: #f9f9f9; /* Couleur de fond des commentaires */
     border-radius: 5px; /* Coins arrondis */
     border: 1px solid #ccc; /* Bordure */
@@ -152,6 +150,7 @@ nav a:hover {
     display: block;
     max-width: 80%; /* Limiter la largeur de l'image */
     max-height: 80%; /* Limiter la hauteur de l'image */
+    border-radius: 8px; /* Coins arrondis pour l'image */
 }
 
 .close {
@@ -159,18 +158,18 @@ nav a:hover {
     top: 15px;
     right: 35px;
     color: #fff; /* Couleur du bouton de fermeture */
-    font-size: 40px;
+    font-size: 40px; /* Taille du bouton de fermeture */
     font-weight: bold;
     cursor: pointer; /* Changer le curseur au survol */
 }
 
-
-/* footer*/
+/* Footer */
 footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #f0f0f0;
-    box-shadow: 7px 7px 15px #b0b0b0, -7px -7px 15px #ffffff;
+    text-align: center; /* Centrer le texte du pied de page */
+    padding: 20px; /* Espacement intérieur */
+    background-color: #f0f0f0; /* Couleur de fond du pied de page */
+    box-shadow: 7px 7px 15px #b0b0b0, /* Ombre du pied de page */
+                -7px -7px 15px #ffffff; /* Ombre inversée */
     position: relative; /* Permet de le placer en bas de la page si nécessaire */
 }
 
@@ -178,18 +177,18 @@ footer {
 /* Mobile (petits écrans) */
 @media (max-width: 600px) {
     header {
-        padding: 15px;
+        padding: 15px; /* Réduire le padding de l'en-tête */
     }
     header h1 {
         font-size: 24px; /* Réduire la taille du texte sur mobile */
     }
     nav a {
         padding: 8px 15px; /* Réduire les marges et padding sur les liens */
-        font-size: 14px;
+        font-size: 14px; /* Réduire la taille de police */
     }
     .section {
         padding: 15px; /* Réduire les paddings des sections */
-        margin: 10px 0;
+        margin: 10px 0; /* Réduire la marge entre les sections */
     }
     .post {
         padding: 10px; /* Réduire les paddings des posts */
@@ -203,7 +202,7 @@ footer {
     }
     nav a {
         padding: 10px 18px; /* Ajuster les paddings sur tablette */
-        font-size: 16px;
+        font-size: 16px; /* Taille de police pour tablette */
     }
 }
 
@@ -213,14 +212,6 @@ footer {
         font-size: 32px; /* Taille du titre pour les grands écrans */
     }
     nav a {
-        font-size: 18px;
-    }
-    .section {
-        padding: 25px; /* Plus de padding pour les sections */
-    }
-    .post {
-        padding: 20px; /* Plus de padding pour les posts */
+        font-size: 18px; /* Taille de police pour grands écrans */
     }
 }
-
-

@@ -6,7 +6,14 @@
         "image": "",
         "likes": 0,
         "dislikes": 0,
-        "loves": 0
+        "loves": 0,
+        "comments": [
+            {
+                "name": "Alice Dupont",
+                "content": "Salut Jean!",
+                "replies": []
+            }
+        ]
     },
     {
         "id": 2,
@@ -15,7 +22,14 @@
         "image": "images/fleur-simple.avif",
         "likes": 0,
         "dislikes": 0,
-        "loves": 0
+        "loves": 0,
+        "comments": [
+            {
+                "name": "Ovi",
+                "content": "Cool!",
+                "replies": []
+            }
+        ]
     }
 ]
 
