@@ -2,9 +2,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Messagerie - Mini-Réseau Social</title>
+    <title>Page de Messagerie</title>
     <link rel="icon" type="image/png" sizes="32x32" href="images/message.png">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="messagerie.css">
 </head>
 <body>
     <header>
@@ -16,20 +16,24 @@
         </nav>
     </header>
 
-    <main>
-        <section id="messagerie" class="section">
-            <h2>Messagerie</h2>
-            <div id="conversations-container"></div> <!-- Conteneur pour les conversations -->
-        </section>
-    </main>
-
+    <div id="messaging-container"> <!-- Conteneur principal pour la messagerie -->
+        <h1>Messagerie</h1>
+        <div id="conversations-list"></div> <!-- Liste des conversations -->
+        <div id="conversation-detail" class="hidden"> <!-- Détails de la conversation -->
+            <h2 id="conversation-title"></h2> <!-- Titre de la conversation -->
+            <div id="messages-list"></div> <!-- Liste des messages -->
+            <input type="text" id="new-message-input" placeholder="Écrire un message..."> <!-- Champ pour écrire un nouveau message -->
+            <button id="send-message-button">Envoyer</button> <!-- Bouton pour envoyer le message -->
+        </div>
+    </div>
+    
+    <!-- Texte du pied de page -->
     <footer>
         <p>&copy; 2024 Mini Réseau Social. Tous droits réservés.</p>
     </footer>
-
-    <script src="script.js"></script> <!-- Lien vers le fichier JavaScript -->
-    <script>
-        loadConversations(); // Appel à la fonction pour charger les conversations
-    </script>
+     
+    <!-- Lien vers le fichier JavaScript pour la logique de la messagerie -->
+    <script src="messagerie.js"></script> <!-- Lien vers le fichier JavaScript -->
+    
 </body>
 </html>

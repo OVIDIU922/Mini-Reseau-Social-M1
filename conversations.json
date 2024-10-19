@@ -1,10 +1,34 @@
 [
     {
         "id": 1,
-        "name": "Alice"
+        "participantName": "Alice Dupont",
+        "messages": [
+            {
+                "senderName": "Alice Dupont",
+                "content": "Salut!",
+                "timestamp": "10:00 AM"
+            },
+            {
+                "senderName": "Vous",
+                "content": "Bonjour!",
+                "timestamp": "10:01 AM"
+            }
+        ]
     },
     {
         "id": 2,
-        "name": "Bob"
+        "participantName": "Jean Martin",
+        "messages": [
+            {
+                "senderName": "Jean Martin",
+                "content": "Comment ça va?",
+                "timestamp": "10:05 AM"
+            },
+            {
+                "senderName": "Vous",
+                "content": "Tout va bien, merci!",
+                "timestamp": "10:06 AM"
+            }
+        ]
     }
 ]
