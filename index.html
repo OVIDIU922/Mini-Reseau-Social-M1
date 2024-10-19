@@ -3,7 +3,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mini Réseau Social M1</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="feed.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Lien vers Font Awesome -->
+</head>
 </head>
 <body>
     <header>
@@ -17,16 +19,22 @@
 
     <main>
         <section id="feed" class="section">
-            <h2>Feed</h2>
+            <h2>Fil d'Actualité</h2>
             <div id="feed-container"></div> <!-- Conteneur pour les posts -->
         </section>
     </main>
+
+    <!-- Modale pour afficher l'image en plein écran -->
+    <div id="image-modal" class="modal" onclick="closeModal()">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modal-image">
+    </div>
 
     <footer>
         <p>&copy; 2024 Mini Réseau Social. Tous droits réservés.</p>
     </footer>
 
-    <script src="script.js"></script> <!-- Lien vers le fichier JavaScript -->
+    <script src="feed.js"></script> <!-- Lien vers le fichier JavaScript -->
     <script>
         loadData(); // Appel à la fonction pour charger les données des posts
     </script>

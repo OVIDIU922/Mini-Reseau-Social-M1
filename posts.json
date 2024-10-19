@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "author": "Jean Dupont",
+        "name": "Jean Martin",
         "content": "Bonjour tout le monde!",
         "image": "",
         "likes": 0,
@@ -10,9 +10,9 @@
     },
     {
         "id": 2,
-        "author": "Marie Dubois",
+        "name": "Alice Dupont",
         "content": "Je viens de publier une nouvelle photo!",
-        "image": "path/to/image.jpg",
+        "image": "images/fleur-simple.avif",
         "likes": 0,
         "dislikes": 0,
         "loves": 0
