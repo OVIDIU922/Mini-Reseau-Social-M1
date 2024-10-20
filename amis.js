@@ -1,9 +1,107 @@
 // Fonction pour filtrer les amis en fonction de l'entrée dans le champ de recherche
 function filterFriends() {
+    const input = document.getElementById('searchInput');
+    const filter = input.value.toLowerCase();
+    const friendsList = document.getElementById('friends-list');
+    const friends = friendsList.getElementsByClassName('friend-item');
+
+    Array.from(friends).forEach(friend => {
+        const friendName = friend.getElementsByTagName('span')[0].textContent.toLowerCase();
+        if (friendName.includes(filter)) {
+            friend.style.display = '';
+        } else {
+            friend.style.display = 'none';
+        }
+    });
+}
+
+document.getElementById('searchInput').addEventListener('input', filterFriends);
+
+document.addEventListener("DOMContentLoaded", () => {
+    const friendsList = document.getElementById("friends-list");
+    let draggedItem = null;
+
+    // Ajout des événements de drag-and-drop pour chaque ami (bureau)
+    friendsList.querySelectorAll(".friend-item").forEach(item => {
+        // Drag-and-drop pour bureau
+        item.addEventListener("dragstart", function () {
+            draggedItem = this;
+            setTimeout(() => this.classList.add("dragging"), 0);
+        });
+
+        item.addEventListener("dragend", function () {
+            setTimeout(() => this.classList.remove("dragging"), 0);
+            draggedItem = null;
+        });
+
+        item.addEventListener("dragover", function (e) {
+            e.preventDefault();
+            this.classList.add("over");
+        });
+
+        item.addEventListener("dragleave", function () {
+            this.classList.remove("over");
+        });
+
+        item.addEventListener("drop", function (e) {
+            e.preventDefault();
+            this.classList.remove("over");
+
+            if (draggedItem !== this) {
+                const allItems = [...friendsList.querySelectorAll(".friend-item")];
+                const draggedIndex = allItems.indexOf(draggedItem);
+                const dropIndex = allItems.indexOf(this);
+
+                if (draggedIndex < dropIndex) {
+                    this.after(draggedItem);
+                } else {
+                    this.before(draggedItem);
+                }
+            }
+        });
+
+        // Gestion du drag-and-drop pour mobile/tablette (tactile)
+        item.addEventListener("touchstart", function (e) {
+            draggedItem = this;
+            draggedItem.classList.add("dragging");
+        });
+
+        item.addEventListener("touchend", function (e) {
+            draggedItem.classList.remove("dragging");
+            draggedItem = null;
+        });
+
+        item.addEventListener("touchmove", function (e) {
+            e.preventDefault();
+            const touchLocation = e.targetTouches[0]; // Obtenir la position du toucher
+
+            const elementAtTouch = document.elementFromPoint(touchLocation.clientX, touchLocation.clientY);
+            
+            if (elementAtTouch && elementAtTouch.classList.contains('friend-item') && elementAtTouch !== draggedItem) {
+                const allItems = [...friendsList.querySelectorAll(".friend-item")];
+                const draggedIndex = allItems.indexOf(draggedItem);
+                const dropIndex = allItems.indexOf(elementAtTouch);
+
+                if (draggedIndex < dropIndex) {
+                    elementAtTouch.after(draggedItem);
+                } else {
+                    elementAtTouch.before(draggedItem);
+                }
+            }
+        });
+    });
+});
+
+
+
+
+
+// Fonction pour filtrer les amis en fonction de l'entrée dans le champ de recherche
+/*function filterFriends() {
     const input = document.getElementById('searchInput'); // Récupère la valeur du champ de recherche
     const filter = input.value.toLowerCase(); // Convertit le texte en minuscules pour faciliter la recherche
-    const friendsList = document.getElementById('friendsList'); // Récupère la liste d'amis
-    const friends = friendsList.getElementsByTagName('li'); // Récupère chaque ami (li)
+    const friendsList = document.getElementById('friends-list'); // Récupère la liste d'amis
+    const friends = friendsList.getElementsByClassName('friend-item'); // Récupère chaque ami (élément li)
 
     // Parcourt chaque ami et affiche ou cache en fonction du filtre
     Array.from(friends).forEach(friend => {
@@ -16,90 +114,57 @@ function filterFriends() {
     });
 }
 
-// Variables pour le drag and drop (glisser-déposer)
-const friendsList = document.getElementById('friendsList');
-let dragged; // Élement qui est en train d'être déplacé
+// Appel de la fonction filterFriends quand l'utilisateur tape dans le champ de recherche
+document.getElementById('searchInput').addEventListener('input', filterFriends);
 
-// Lorsque le glisser commence
-friendsList.addEventListener('dragstart', (e) => {
-    dragged = e.target; // Stocke l'élément glissé
-    e.target.style.opacity = 0.5; // Change l'opacité pour indiquer qu'il est en mouvement
-});
+// Ajout des événements de drag-and-drop
+document.addEventListener("DOMContentLoaded", () => {
+    const friendsList = document.getElementById("friends-list");
+    let draggedItem = null;
 
-// Lorsque le glisser s'arrête
-friendsList.addEventListener('dragend', (e) => {
-    e.target.style.opacity = ''; // Rétablit l'opacité originale
-});
-
-// Permet à un autre élément de recevoir l'élément glissé
-friendsList.addEventListener('dragover', (e) => {
-    e.preventDefault(); // Empêche le comportement par défaut
-});
-
-// Lorsqu'un élément est déposé
-friendsList.addEventListener('drop', (e) => {
-    e.preventDefault(); // Empêche l'action par défaut
-    if (e.target.tagName === 'LI' && e.target !== dragged) { // Si l'élément cible est une ligne d'ami différente
-        const draggedIndex = Array.from(friendsList.children).indexOf(dragged); // Index de l'élément déplacé
-        const targetIndex = Array.from(friendsList.children).indexOf(e.target); // Index de l'élément cible
-
-        // Réorganise la liste en fonction de la position de l'élément déplacé
-        if (draggedIndex > targetIndex) {
-            friendsList.insertBefore(dragged, e.target); // Insère l'élément déplacé avant la cible
-        } else {
-            friendsList.insertBefore(dragged, e.target.nextSibling); // Insère après si déplacé vers le bas
-        }
-    }
-});
-
-
-
-
-
-// Fonction pour filtrer les amis par nom et prénom
-/*function filterFriends() {
-    const input = document.getElementById('searchInput');
-    const filter = input.value.toLowerCase();
-    const friendsList = document.getElementById('friendsList');
-    const friends = friendsList.getElementsByTagName('li');
-
-    Array.from(friends).forEach(friend => {
-        const friendName = friend.getElementsByTagName('span')[0].textContent.toLowerCase();
-        if (friendName.includes(filter)) {
-            friend.style.display = '';
-        } else {
-            friend.style.display = 'none';
-        }
-    });
-}
-
-// Fonction pour le drag and drop
-const friendsList = document.getElementById('friendsList');
-let dragged;
-
-friendsList.addEventListener('dragstart', (e) => {
-    dragged = e.target;
-    e.target.style.opacity = 0.5;
-});
-
-friendsList.addEventListener('dragend', (e) => {
-    e.target.style.opacity = '';
-});
-
-friendsList.addEventListener('dragover', (e) => {
-    e.preventDefault();
-});
-
-friendsList.addEventListener('drop', (e) => {
-    e.preventDefault();
-    if (e.target.tagName === 'LI' && e.target !== dragged) {
-        const draggedIndex = Array.from(friendsList.children).indexOf(dragged);
-        const targetIndex = Array.from(friendsList.children).indexOf(e.target);
+    // Ajout des événements de drag-and-drop pour chaque élément de la liste d'amis
+    friendsList.querySelectorAll(".friend-item").forEach(item => {
         
-        if (draggedIndex > targetIndex) {
-            friendsList.insertBefore(dragged, e.target);
-        } else {
-            friendsList.insertBefore(dragged, e.target.nextSibling);
-        }
-    }
+        // Quand le drag commence
+        item.addEventListener("dragstart", function () {
+            draggedItem = this; // Stocke l'élément qui est en cours de glissement
+            setTimeout(() => this.classList.add("dragging"), 0); // Ajoute une classe 'dragging' pour changer l'apparence
+        });
+
+        // Quand le drag se termine
+        item.addEventListener("dragend", function () {
+            setTimeout(() => this.classList.remove("dragging"), 0); // Retire la classe 'dragging'
+            draggedItem = null; // Réinitialise l'élément en cours de glissement
+        });
+
+        // Permet de glisser l'élément sur d'autres éléments
+        item.addEventListener("dragover", function (e) {
+            e.preventDefault(); // Empêche le comportement par défaut
+            this.classList.add("over"); // Met en surbrillance la zone de dépôt
+        });
+
+        // Quand on quitte la zone de dépôt sans déposer
+        item.addEventListener("dragleave", function () {
+            this.classList.remove("over"); // Retire la surbrillance
+        });
+
+        // Quand l'élément est déposé
+        item.addEventListener("drop", function (e) {
+            e.preventDefault(); // Empêche le comportement par défaut
+            this.classList.remove("over"); // Retire la surbrillance après le dépôt
+
+            if (draggedItem !== this) { // Si l'élément glissé et l'élément de dépôt sont différents
+                // Réorganise les éléments de la liste
+                const allItems = [...friendsList.querySelectorAll(".friend-item")];
+                const draggedIndex = allItems.indexOf(draggedItem);
+                const dropIndex = allItems.indexOf(this);
+
+                if (draggedIndex < dropIndex) {
+                    this.after(draggedItem); // Déplace après l'élément déposé
+                } else {
+                    this.before(draggedItem); // Déplace avant l'élément déposé
+                }
+            }
+        });
+    });
 });*/
