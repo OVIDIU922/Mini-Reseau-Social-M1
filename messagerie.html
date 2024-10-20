@@ -15,15 +15,24 @@
             <a href="amis.html">Amis</a> <!-- Lien vers la page Liste d'Amis -->
         </nav>
     </header>
+     
+    <div class="messaging-container">
+        <div class="conversation-list">
+            <h2>Conversations</h2>
+            <ul id="conversations">
+                <!-- Les conversations seront ajoutées ici dynamiquement -->
+            </ul>
+        </div>
 
-    <div id="messaging-container"> <!-- Conteneur principal pour la messagerie -->
-        <h1>Messagerie</h1>
-        <div id="conversations-list"></div> <!-- Liste des conversations -->
-        <div id="conversation-detail" class="hidden"> <!-- Détails de la conversation -->
-            <h2 id="conversation-title"></h2> <!-- Titre de la conversation -->
-            <div id="messages-list"></div> <!-- Liste des messages -->
-            <input type="text" id="new-message-input" placeholder="Écrire un message..."> <!-- Champ pour écrire un nouveau message -->
-            <button id="send-message-button">Envoyer</button> <!-- Bouton pour envoyer le message -->
+        <div id="conversation-detail" class="hidden">
+            <h2 id="conversationTitle"></h2>
+            <ul id="messages">
+                <!-- Historique des messages sera ajouté ici -->
+            </ul>
+            <form id="new-message-form">
+                <textarea id="messageInput" placeholder="Écrivez votre message..." required></textarea>
+                <button type="submit">Envoyer</button>
+            </form>
         </div>
     </div>
     

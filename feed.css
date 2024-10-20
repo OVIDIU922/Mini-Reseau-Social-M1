@@ -193,6 +193,10 @@ footer {
     .post {
         padding: 10px; /* Réduire les paddings des posts */
     }
+     /* Pied de page */
+    footer {
+        font-size: 12px; /* Réduire la taille du texte du pied de page */
+    }
 }
 
 /* Tablette (écrans moyens) */

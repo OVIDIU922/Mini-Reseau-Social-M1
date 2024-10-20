@@ -42,34 +42,6 @@ nav a:hover {
                 -2px -2px 10px rgba(255, 255, 255, 0.8);
 }
 
-/* Styles des sections principales */
-.section {
-    padding: 20px; /* Espacement intérieur des sections */
-    background: #f0f0f0; /* Couleur de fond des sections */
-    border-radius: 20px; /* Coins arrondis */
-    box-shadow: 8px 8px 15px rgba(180, 180, 180, 0.4), /* Ombre */
-                -8px -8px 15px rgba(255, 255, 255, 0.8);
-    margin: 20px 0; /* Marge entre les sections */
-}
-
-/* Styles des posts */
-.post {
-    background: #e0e0e0; /* Couleur de fond des posts */
-    border-radius: 10px; /* Coins arrondis */
-    padding: 15px; /* Espacement intérieur des posts */
-    margin-bottom: 10px; /* Marge en bas des posts */
-    box-shadow: 5px 5px 10px rgba(180, 180, 180, 0.4), /* Ombre des posts */
-                -5px -5px 10px rgba(255, 255, 255, 0.9);
-}
-
-/* Style général des images dans les posts */
-.post img {
-    max-width: 100%; /* L'image ne dépassera jamais 100% de la largeur du conteneur */
-    height: auto;    /* Conserve le ratio de l'image */
-    border-radius: 10px; /* Coins arrondis pour un meilleur style */
-    display: block;  /* Pour éviter tout espace supplémentaire autour de l'image */
-    margin: 10px 0;  /* Ajouter une marge au-dessus et en-dessous */
-}
 
 /* Styles des amis */
 .friend {
@@ -104,16 +76,13 @@ footer {
         padding: 8px 15px; /* Réduire les marges et padding sur les liens */
         font-size: 14px;
     }
-    .section {
-        padding: 15px; /* Réduire les paddings des sections */
-        margin: 10px 0;
-    }
-    .post {
-        padding: 10px; /* Réduire les paddings des posts */
-    }
     .friend {
         flex-direction: column; /* Les amis seront affichés en colonne */
         text-align: center; /* Centrer le texte */
+    }
+    /* Pied de page */
+    footer {
+        font-size: 12px; /* Réduire la taille du texte du pied de page */
     }
 }
 

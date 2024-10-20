@@ -1,34 +1,68 @@
-[
-    {
-        "id": 1,
-        "participantName": "Alice Dupont",
-        "messages": [
-            {
-                "senderName": "Alice Dupont",
-                "content": "Salut!",
-                "timestamp": "10:00 AM"
+{
+    "conversations": [
+        {
+            "id": 1,
+            "friend": {
+                "name": "Jean Dupont",
+                "profilePic": "images/profil.jpg"
             },
-            {
-                "senderName": "Vous",
-                "content": "Bonjour!",
-                "timestamp": "10:01 AM"
-            }
-        ]
-    },
-    {
-        "id": 2,
-        "participantName": "Jean Martin",
-        "messages": [
-            {
-                "senderName": "Jean Martin",
-                "content": "Comment ça va?",
-                "timestamp": "10:05 AM"
+            "lastMessage": {
+                "text": "Salut, comment ça va ?",
+                "timestamp": "2024-10-19T12:34:56"
             },
-            {
-                "senderName": "Vous",
-                "content": "Tout va bien, merci!",
-                "timestamp": "10:06 AM"
-            }
-        ]
-    }
-]
+            "messages": [
+                {
+                    "id": 1,
+                    "text": "Salut, ça va bien et toi ?",
+                    "timestamp": "2024-10-19T12:35:00",
+                    "sender": {
+                        "name": "Ovi",
+                        "profilePic": "images/moi.jpg"
+                    }
+                },
+                {
+                    "id": 2,
+                    "text": "Ça va super, merci !",
+                    "timestamp": "2024-10-19T12:36:00",
+                    "sender": {
+                        "name": "Jean Dupont",
+                        "profilePic": "images/profil.jpg"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "friend": {
+                "name": "Marie Curie",
+                "profilePic": "images/profil1.jpg"
+            },
+            "lastMessage": {
+                "text": "On se voit ce soir ?",
+                "timestamp": "2024-10-19T13:00:00"
+            },
+            "messages": [
+                {
+                    "id": 1,
+                    "text": "Oui, à quelle heure ?",
+                    "timestamp": "2024-10-19T13:01:00",
+                    "sender": {
+                        "name": "Ovi",
+                        "profilePic": "images/moi.jpg"
+                    }
+                },
+                {
+                    "id": 2,
+                    "text": "À 18h.",
+                    "timestamp": "2024-10-19T13:02:00",
+                    "sender": {
+                        "name": "Marie Curie",
+                        "profilePic": "images/profil1.jpg"
+                    }
+                }
+            ]
+        }
+    ]
+}
+
+
