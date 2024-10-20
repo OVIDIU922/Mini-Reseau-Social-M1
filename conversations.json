@@ -61,6 +61,37 @@
                     }
                 }
             ]
+        },
+        {
+            "id": 3,
+            "friend": {
+                "name": "Daniela Curie",
+                "profilePic": "images/profil4.jpg"
+            },
+            "lastMessage": {
+                "text": "Tu as vu le nouveau film de Marvel?",
+                "timestamp": "2024-10-22T20:00:00"
+            },
+            "messages": [
+                {
+                    "id": 1,
+                    "text": "Non, pas encore.",
+                    "timestamp": "2024-10-22T20:01:00",
+                    "sender": {
+                        "name": "Ovi",
+                        "profilePic": "images/moi.jpg"
+                    }
+                },
+                {
+                    "id": 3,
+                    "text": "Il est vraiment génial!",
+                    "timestamp": "2024-10-22T20:02:00",
+                    "sender": {
+                        "name": "Daniela Curie",
+                        "profilePic": "images/profil4.jpg"
+                    }
+                }
+            ]
         }
     ]
 }

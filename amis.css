@@ -42,17 +42,59 @@ nav a:hover {
                 -2px -2px 10px rgba(255, 255, 255, 0.8);
 }
 
-
-/* Styles des amis */
-.friend {
-    background: #e0e0e0; /* Couleur de fond des amis */
-    padding: 10px; /* Espacement intérieur des amis */
-    border-radius: 10px; /* Coins arrondis */
-    margin: 5px 0; /* Marge entre les amis */
-    display: flex; /* Flexbox pour aligner le contenu */
-    justify-content: space-between; /* Espacement entre les éléments */
+/* Conteneur principal des amis */
+.friends-container {
+    margin: 20px;
+    padding: 10px;
 }
 
+/* Champ de recherche */
+#searchInput {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+/* Liste des amis, sans puces */
+ul#friendsList {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Style pour chaque ami dans la liste */
+.friend-item {
+    display: flex;
+    align-items: center; /* Centre verticalement les éléments */
+    justify-content: space-between; /* Met l'espace entre les éléments */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    cursor: move; /* Indique que l'élément est déplaçable */
+}
+
+/* Style des images de profil */
+.friend-item img {
+    border-radius: 50%; /* Arrondi les images pour les rendre circulaires */
+    width: 40px;
+    height: 40px;
+}
+
+/* Texte du nom d'ami */
+.friend-item span {
+    flex-grow: 1; /* Remplit l'espace disponible entre l'image et le lien */
+    margin-left: 15px;
+}
+
+/* Style du lien vers la messagerie */
+.friend-item a {
+    text-decoration: none;
+    color: #4CAF50;
+}
 
 /* footer*/
 footer {

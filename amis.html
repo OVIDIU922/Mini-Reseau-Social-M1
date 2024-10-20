@@ -2,13 +2,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amis - Mini-Réseau Social</title>
+    <title>Liste d'Amis</title>
     <link rel="icon" type="image/png" sizes="32x32" href="images/amis.jpg">
     <link rel="stylesheet" href="amis.css">
 </head>
 <body>
+     <!-- En-tête de la page avec les liens de navigation -->
     <header>
-        <h1>Mini-Réseau Social</h1>
+        <h1>Liste d'Amis</h1>
         <nav>
             <a href="index.html">Fil d'Actualité</a> <!-- Lien vers la page Feed -->
             <a href="messagerie.html">Messagerie</a> <!-- Lien vers la page Messagerie -->
@@ -16,19 +17,44 @@
         </nav>
     </header>
 
-    <main>
-        <section id="amis" class="section">
-            <h2>Liste d'Amis</h2>
-            <input type="text" id="friend-filter" placeholder="Rechercher un ami" oninput="filterFriends(this.value)" /> <!-- Champ de recherche pour filtrer les amis -->
-            <div id="friends-list">
-                <div class="friend">Alice <button onclick="startChat('Alice')">Chat</button></div> <!-- Ami avec bouton pour démarrer le chat -->
-                <div class="friend">Bob <button onclick="startChat('Bob')">Chat</button></div>
-                <div class="friend">Charlie <button onclick="startChat('Charlie')">Chat</button></div>
-            </div>
-        </section>
-    </main>
+     <!-- Conteneur principal pour la liste d'amis -->
+     <div class="friends-container">
+        <!-- Champ de recherche pour filtrer les amis -->
+        <input type="text" id="searchInput" placeholder="Rechercher par nom ou prénom..." onkeyup="filterFriends()">
 
-   
+        <!-- Liste des amis, chaque élément est réorganisable par glisser-déposer -->
+        <ul id="friendsList">
+            <li class="friend-item" draggable="true">
+                <img src="images/profil.jpg" alt="Jean Dupont">
+                <span>Jean Dupont</span>
+                <a href="messagerie.html">Message</a>
+            </li>
+            <li class="friend-item" draggable="true">
+                <img src="images/profil1.jpg" alt="Marie Curie">
+                <span>Marie Curie</span>
+                <a href="messagerie.html">Message</a>
+            </li>
+            <li class="friend-item" draggable="true">
+                <img src="images/profil2.jpg" alt="Albert Einstein">
+                <span>Ovi Paul</span>
+                <a href="messagerie.html">Message</a>
+            </li>
+           
+            <li class="friend-item" draggable="true">
+                <img src="images/profil3.jpg" alt="Albert Einstein">
+                <span>Albert Einstein</span>
+                <a href="messagerie.html">Message</a>
+            </li>
+            <li class="friend-item" draggable="true">
+                <img src="images/profil4.jpg" alt="Daniela Curie">
+                <span>Daniela Curie</span>
+                <a href="messagerie.html">Message</a>
+            </li>
+            <!-- Ajoutez d'autres amis ici si nécessaire -->
+        </ul>
+    </div>
+
+     <!-- Texte du pied de page -->
     <footer>
         <p>&copy; 2024 Mini Réseau Social. Tous droits réservés.</p>
     </footer>
